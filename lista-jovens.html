@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Jovens</title>
+  <link rel="stylesheet" href="lista-jovens.css">
+</head>
+<body>
+
+
+<header class ="menu">
+    <section class ="lado-esquerdo">
+        <div class ="menu-icone" onclick ="abrirMenu()">&#9776;</div>
+    </section>
+    
+    <section class ="lado-direito">
+        <h2>Tesouraria Dos Jovens</h2>
+        <p>Lista De Jovens</p>
+    </section>
+</header>
+
+<div id="overlay" class="overlay"></div>
+
+<nav id ="menu-lateral">
+    <button class ="bnt-fechar-menu" onclick ="fecharMenu()"> <span class ="icon-x">X</span></button>
+    
+    <ul>
+        <li><a href ="index.html">Inicio</a></li>
+        <li><a href ="relatorio.html">Relatorios</a></li>
+        <li><a href ="agenda.html">Agenda</a></li>
+        
+        <div class="caixa-versiculo">
+  <p>
+    “Portanto, Meus Amados Irmãos, Sede Firmes e Constantes, Sempre Abundantes Na Obra Do Senhor, Sabendo Que, No Senhor, o Vosso Trabalho Não é Vão.”
+  </p>
+  <span>1 Coríntios 15:58</span>
+</div>
+
+<img src ="logo-geraçao-santa.png" alt ="logo" class ="logo-gerçao-santa">
+
+<div class="menu-footer">
+  <p>Jovens Geração Santa</p>
+  <span>© 2026</span>
+</div>
+
+    </ul>
+</nav>
+   
+    <div class="card">
+      <form id="formJovem">
+        <div class="form-grid">
+          <input type="text" id="nome" placeholder="Nome" required>
+
+          <select id="funcao" required>
+            <option value="">Selecione a função</option>
+            <option value="Líder">Líder</option>
+            <option value="Vice-líder">Vice-líder</option>
+            <option value="Mídia">Mídia</option>
+            <option value="Louvor">Louvor</option>
+            <option value="Nenhum">Nenhum</option>
+          </select>
+
+          <input type="text" id="contato" placeholder="Contato" required>
+
+          <input type="text" id="frequencia" placeholder="Frequência ex: 100%" required>
+        </div>
+
+        <div class="acoes-form">
+          <button type="submit" class="btn-salvar" id="btnSalvar">Adicionar</button>
+          <button type="button" class="btn-cancelar" id="btnCancelar">Cancelar Edição</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Contato</th>
+            <th>Frequência</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaJovens"></tbody>
+      </table>
+
+      <div class="sem-dados" id="semDados">Nenhum jovem cadastrado ainda.</div>
+    </div>
+  </div>
+
+  <script src="lista-jovens.js"></script>
+</body>
+</html>

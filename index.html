@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang ="pt-BR">
+<head>
+    <meta name ="viewport" content ="width = device-width, initial-scale = 1.0">
+    <meta charset ="UTF-8">
+    <link rel ="stylesheet" href ="inicio.css">
+</head>
+<body>
+    
+<header class ="menu">
+    <section class ="lado-esquerdo">
+        <div class ="menu-icon" onclick ="abrirMenu()">&#9776;</div>
+    </section>
+    
+    <section class ="lado-direito">
+        <h2>Tesouraria Dos Jovens</h2>
+        <p>Controle Finaceiro</p>
+    </section>
+</header>
+
+<div id ="overlay" class ="overlay"></div>
+
+<nav id ="menu-lateral">
+    <button class ="btn-fechar-menu" onclick ="fecharMenu()">X</button>
+    
+    <ul>
+        <li><a href ="lista-jovens.html">Lista De Jovens</a></li>
+        <li><a href ="agenda.html">Bloco De Notas</a></li>
+        <li><a href ="relatorio.html">Relatorio</a></li>
+    </ul>
+    
+    <div class="caixa-versiculo">
+  <p>
+    “Portanto, meus amados irmãos, sede firmes e constantes,
+    sempre abundantes na obra do Senhor, sabendo que, no Senhor,
+    o vosso trabalho não é vão.”
+  </p>
+  <span>1 Coríntios 15:58</span>
+</div>
+
+<img src ="logo-geraçao-santa.png" alt ="logo" class ="logo-geraçao-santa">
+
+<footer class="footer">
+  <p>Geração Santa</p>
+  <p>&copy; 2026</p>
+</footer>
+    
+</nav>
+
+<main class ="container">
+    <section class ="cards-resumo">
+        <article class ="card-resumo">
+            <h2>Total Arrecadado</h2>
+            <p id ="totalArrecadado" class ="valor-arrecadado">R$ +0,00</p>
+        </article>
+        
+        <article class ="card-resumo">
+            <h2>Total Gasto</h2>
+            <p id ="totalGasto" class ="valor-gasto">R$ -0,00</p>
+        </article>
+        
+        <article class ="card-resumo">
+            <h2>Saldo Final</h2>
+            <p id ="saldoFinal" class ="valor-final">R$ 0,00</p>
+        </article>
+    </section>
+    
+    <section class ="painel-principal">
+        <div class ="form-box">
+            <h2>Criar Lançamento</h2>
+            
+            <form id ="formLancamento">
+                <div class ="campo">
+                    <label for ="tipo">Tipo</label>
+                    <select id ="tipo"required>
+                        <option value ="">Selecionar</option>
+                        <option value ="entrada">Entrada De Dinheiro</option>
+                        <option value ="saida">Saida De Dinheiro</option>
+                    </select>
+                </div>
+                
+                <div class ="campo">
+                    <label for ="registrarTopo">Registrar Tipo</label>
+                    <select id ="registrarTipo"required>
+                        <option value ="">Selecionar</option>
+                        <option value ="oferta">Oferta</option>
+                        <option value ="vendas">Vendas</option>
+                        <option value ="doação">Doação</option>
+                        <option value ="sorteio">Soreteio</option>
+                        <option value ="rifa">Rifa</option>
+                    </select>
+                </div>
+                
+                <div class ="campo">
+                    <label for ="descricao">Descrição</label>
+                    <input type ="text" id ="descricao" placeholder ="Ex: Oferta Do Culto"required>
+                </div>
+                
+                <div class ="campo">
+                    <label for ="valorEntrada">Valor Da Entrada <span class ="opcional">*opcional*</span></label>
+                    <input type ="number" id ="valorEntrada" step ="0.01" placeholder ="0.00">
+                </div>
+                
+                <div class ="campo">
+                    <label for ="valorDespesa">Valor Da Despesa  <span class ="opcional">*opcional*</span></label>
+                    <input type ="number" id ="valorDespesa" step ="0.01" placeholder ="0.00">
+                </div>
+                
+                <div class ="campo">
+                    <label for ="data">Data</label>
+                    <input type ="date" id ="data"required>
+                </div>
+                
+                <button type ="submit" class ="btn-salvar">Salvar Lançamento</button>
+            </form>
+        </div>
+        
+        <div class ="resumo-box">
+            <h2>Resumo Rapido</h2>
+            
+            <div class ="resumo-item">
+                <span>Ultimo Lançamento</span>
+                <strong id ="ultimoLancamento">Nenhum</strong>
+            </div>
+            
+            <div class ="resumo-item">
+                <span>Maior Entrada</span>
+                <strong id ="maiorEntrada" class ="valor-arrecadado">R$ +0,00</strong>
+            </div>
+            
+            <div class ="resumo-item">
+                <span>Maior Gasto</span>
+                <strong id ="maiorGasto" class ="valor-gasto">R$ -0,00</strong>
+            </div>
+        </div>
+    </section>
+    
+    <section class ="filtros">
+        <h2>Buscar Lançamento</h2>
+        
+        <input type ="text" id ="buscarLancamento" placeholder ="Digite a Descrição Do Lançamento">
+    </section>
+    
+    <section class ="historico">
+        <h2>Historico De Lançamentos</h2>
+        
+        <div class ="tabela-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Registro</th>
+                        <th>Descrição</th>
+                        <th>Lucro</th>
+                        <th>Despesa</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id ="tabelaLancamentos"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+<script src ="inicio.js"></script>
+</body>
+</html>

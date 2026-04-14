@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name ="viewport" content ="width = device-width, initial-scale = 1.0">
+    <meta charset ="UTF-8">
+    <link rel ="stylesheet" href ="relatorio.css">
+</head>
+<body>
+    
+<header class ="menu">
+    <section class ="lado-esquerdo">
+        <div class ="menu-icone" onclick ="abrirMenu()">&#9776;</div>
+    </section>
+    
+    <section class ="lado-direito">
+        <h2>Tesouraria Dos Jovens</h2>
+        <p>Controle Financeiro</p>
+    </section>
+</header>
+
+<div id="overlay" class="overlay"></div>
+
+<nav id ="menu-lateral">
+    <button class ="bnt-fechar-menu" onclick ="fecharMenu()"> <span class ="icon-x">X</span></button>
+    
+    <ul>
+        <li><a href ="index.html">Inicio</a></li>
+        <li><a href ="lista-jovens.html">Lista De Jovens</a></li>
+        <li><a href ="agenda.html">Agenda</a></li>
+        
+        <div class="caixa-versiculo">
+  <p>
+    “Portanto, Meus Amados Irmãos, Sede Firmes e Constantes, Sempre Abundantes Na Obra Do Senhor, Sabendo Que, No Senhor, o Vosso Trabalho Não é Vão.”
+  </p>
+  <span>1 Coríntios 15:58</span>
+</div>
+
+<img src ="logo-geraçao-santa.png" alt ="logo" class ="logo-gerçao-santa">
+
+<div class="menu-footer">
+  <p>Jovens Geração Santa</p>
+  <span>© 2026</span>
+</div>
+
+    </ul>
+</nav>
+    
+
+<section class="relatorio" id ="relatorioPDF">
+    <div class="topo-relatorio">
+      <h1>Relatório Financeiro</h1>
+      <p>Departamento de Jovens - Geração Santa</p>
+    </div>
+
+    <div class="cards-resumo">
+      <div class="card">
+        <h3>Total de Entradas</h3>
+        <p class="entrada" id ="totalEntradas"R$ 0,00</p>
+      </div>
+
+      <div class="card">
+        <h3>Total de Saídas</h3>
+        <p class="saida" id ="totalSaidas"R$ 0,00</p>
+      </div>
+
+      <div class="card">
+        <h3>Saldo Final</h3>
+        <p class="saldo" id ="saldoFinal"R$ 0,00</p>
+      </div>
+    </div>
+    
+    <div class="descricao-total-arrecadado">
+  <h2>Descrição Do Total Arrecadado</h2>
+  <textarea id="inputArrecadado" placeholder="Digite aqui..."></textarea>
+  <div class="caixa-texto-pdf" id="textoArrecadado"></div>
+</div>
+
+<div class="descricao-total-gasto">
+  <h2>Descrição Dos Gastos</h2>
+  <textarea id="inputGastos" placeholder="Digite aqui..."></textarea>
+  <div class="caixa-texto-pdf" id="textoGastos"></div>
+</div>
+    
+    <div class="secao">
+  <h2>Histórico do Relatório</h2>
+  <div class="tabela-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Tipo</th>
+          <th>Registro</th>
+          <th>Descrição</th>
+          <th>Lucro</th>
+          <th>Despesa</th>
+          <th>Total</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaRelatorio"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="assinaturas">
+  <div class="assinatura-box">
+    <div class="linha-assinatura"></div>
+    <p>Assinatira</p>
+  </div>
+</div>
+
+<div class="assinaturas">
+  <div class="assinatura-box">
+    <div class="linha-assinatura"></div>
+    <p>Assinatira</p>
+  </div>
+</div>
+
+<div class ="info-lideranças">
+    <p><strong>Lideres:</strong>Paulo Vitor, Mariane/ <strong>Pastores:</strong>Pr.Widamarks, Pra. Arlene Gonçalves</p>
+</div>
+</section>
+
+<button id ="btnGerarPdf">Gerar PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src ="relatorio.js"></script>
+</body>
+</html>
