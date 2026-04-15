@@ -15,6 +15,11 @@
 body {
   background: #f4f6f8;
   color: #222;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .lado-direito {
