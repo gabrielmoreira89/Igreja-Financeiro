@@ -8,6 +8,11 @@
 body {
   background: #ffffff;
   color: white;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .menu {
