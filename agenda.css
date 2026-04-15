@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+body {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .menu {
     background: linear-gradient(135deg, #1d3557, #457b9d);
     display: flex;
